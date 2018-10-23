@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
-import { MatToolbar, 
-    MatToolbarModule, 
-    MatIconModule, 
-    MatListModule, 
-    MatFormFieldModule, 
-    MatInputModule, 
+import { MatToolbar,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatExpansionModule,
-    MatSnackBarModule } from '@angular/material';
+    MatSnackBarModule,
+    MatPaginatorModule,
+    MatTableDataSource,
+    MatTableModule} from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -22,10 +25,12 @@ import { MatDividerModule } from '@angular/material/divider';
       MatListModule,
       MatButtonModule,
       MatDividerModule,
-      MatFormFieldModule, 
+      MatFormFieldModule,
       MatInputModule,
       MatSnackBarModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatPaginatorModule,
+      MatTableModule
   ],
   exports: [
       MatToolbarModule,
@@ -34,10 +39,12 @@ import { MatDividerModule } from '@angular/material/divider';
       MatListModule,
       MatButtonModule,
       MatDividerModule,
-      MatFormFieldModule, 
+      MatFormFieldModule,
       MatInputModule,
       MatSnackBarModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatPaginatorModule,
+      MatTableModule
   ]
 })
-export class MaterialModule { }
+export class MaterialModule {}
