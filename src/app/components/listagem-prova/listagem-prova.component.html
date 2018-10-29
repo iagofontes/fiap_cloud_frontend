@@ -1,0 +1,13 @@
+<div class="row">
+    <h2>Listagem de Provas</h2>
+    <button mat-icon-button color="primary" layout-align="rigth" (click)="novaProva();">
+        <mat-icon aria-label="Trash">add</mat-icon>
+    </button>
+    <mat-list id="itemProva">
+        <mat-list-item *ngFor="let prova of provas" (click)="alterarProva(prova.id);">
+            <h4 mat-line>{{prova.nomeDaProva}}</h4>
+            <p mat-line> Questões: {{prova.questoes.length}} </p>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</div>

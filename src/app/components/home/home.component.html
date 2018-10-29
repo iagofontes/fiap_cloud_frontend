@@ -5,8 +5,8 @@
             <mat-icon mat-list-icon>task</mat-icon>
             <h4 mat-line>{{prova.nomeDaProva}}</h4>
             <p mat-line> Questões: {{prova.questoes.length}} </p>
-            <button mat-fab color="primary"><i class="material-icons">play_arrow</i></button>
+            <button mat-fab color="primary" (click)="openDialog(prova.id);"><i class="material-icons">play_arrow</i></button>
             <mat-divider></mat-divider>
         </mat-list-item>
-    </mat-list>          
+    </mat-list>
 </div>

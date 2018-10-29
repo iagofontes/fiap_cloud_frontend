@@ -1,0 +1,91 @@
+<div class="row">
+    <h2>Manutenção de provas</h2>
+    <form class="">
+        <div class="row">
+            <mat-form-field [floatLabel]="auto" style="width: 20%;">
+                <mat-label>Código</mat-label>
+                <input matInput [(ngModel)]="prova.id" name="codigoProva" placeholder="Código da prova">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="s6" [floatLabel]="auto" style="width: 50%;">
+                <mat-label>Nome</mat-label>
+                <input matInput [(ngModel)]="prova.nomeDaProva" name="nomeProva" placeholder="Nome da prova">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <button mat-stroked-button (click)="finalizarProva();" color="primary">Finalizar prova</button>
+        </div>
+        <mat-divider style="margin-top:1em; margin-bottom:1em;"></mat-divider>
+        <div class="row">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Adicionar perguntas
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            adicione questões e resposta à prova
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>                
+                    <div class="row">
+                        <h5>Questão</h5>
+                        <mat-form-field style="width: 100%;">
+                            <textarea matInput [(ngModel)]="questao" name="questao" placeholder="Digite a questão"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <h5>Respostas</h5>
+                        <div class="row">
+                            <mat-form-field style="width: 40%;">
+                                <textarea matInput [(ngModel)]="resposta1" name="resposta1" placeholder="Resposta A"></textarea>
+                            </mat-form-field>
+                            <mat-form-field style="width: 40%; margin-left:20%;">
+                                <textarea matInput [(ngModel)]="resposta2" name="resposta2" placeholder="Resposta B"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field style="width: 40%;">
+                                <textarea matInput [(ngModel)]="resposta3" name="resposta3" placeholder="Resposta C"></textarea>
+                            </mat-form-field>
+                            <mat-form-field style="width: 40%; margin-left:20%;">
+                                <textarea matInput [(ngModel)]="resposta4" name="resposta4" placeholder="Resposta D"></textarea>
+                            </mat-form-field>
+                        </div>
+                        <div class="row">
+                            <mat-form-field>
+                                <mat-select [(ngModel)]="respostaCorreta" name="respostaCorreta" placeholder="Opção correta">
+                                    <mat-option value="1">1</mat-option>
+                                    <mat-option value="2">2</mat-option>
+                                    <mat-option value="3">3</mat-option>
+                                    <mat-option value="4">4</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <button mat-stroked-button (click)="adicionarQuestao();" color="primary">Adicionar questão</button>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </form>
+    <div class="row" style="margin-bottom: 2em;">
+        <h5>Lista de questões</h5>
+        <mat-accordion *ngFor="let questao of prova.questoes">
+        <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Questão {{questao.id}}
+                    </mat-panel-title>
+                    <!-- <mat-panel-description>
+                        adicione questões e resposta à prova
+                    </mat-panel-description> -->
+                </mat-expansion-panel-header>
+                <div class="row" *ngFor="let resposta of questao.respostas">
+                    <h4>Resposta {{resposta.id}}</h4>
+                    <p>{{resposta.descricao}}</p>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+
+</div>

@@ -1,0 +1,21 @@
+<h1>Prova</h1>
+<mat-divider style="margin-top:1em; margin-bottom:1em;"></mat-divider>
+<div class="row">
+    <div>
+        <h4>Questão</h4>
+        <p>{{questao.descricao}}</p>
+    </div>
+    <mat-divider style="padding-left:1em; padding-right:1em;"></mat-divider>
+    <div>
+        <h4>Respostas</h4>
+        <mat-selection-list #tabela>
+            <mat-list-option *ngFor="let resp of questao.respostas" value="{{resp.id}}">
+                {{resp.descricao}}
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+    <mat-divider style="margin-top:1em; margin-bottom:1em;"></mat-divider>
+    <div>
+        <button mat-stroked-button (click)="proximaQuestao();" color="primary">{{buttonName}}</button>
+    </div>
+</div>

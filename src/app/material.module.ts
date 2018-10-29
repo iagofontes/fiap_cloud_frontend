@@ -9,7 +9,10 @@ import { MatToolbar,
     MatSnackBarModule,
     MatPaginatorModule,
     MatTableDataSource,
-    MatTableModule} from '@angular/material';
+    MatTableModule,
+    MatCardModule,
+    MatSelectModule,
+    MatDialogModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -30,7 +33,11 @@ import { MatDividerModule } from '@angular/material/divider';
       MatSnackBarModule,
       MatExpansionModule,
       MatPaginatorModule,
-      MatTableModule
+      MatTableModule,
+      MatCardModule,
+      MatFormFieldModule,
+      MatSelectModule,
+      MatDialogModule
   ],
   exports: [
       MatToolbarModule,
@@ -44,7 +51,11 @@ import { MatDividerModule } from '@angular/material/divider';
       MatSnackBarModule,
       MatExpansionModule,
       MatPaginatorModule,
-      MatTableModule
+      MatCardModule,
+      MatTableModule,
+      MatFormFieldModule,
+      MatSelectModule,
+      MatDialogModule
   ]
 })
 export class MaterialModule {}

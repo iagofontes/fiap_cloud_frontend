@@ -8,8 +8,12 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent, DialogOverviewExampleDialog } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProvaComponent, MensagemComponent } from './components/prova/prova.component';
+import { CadastroProvaComponent } from './components/cadastro/cadastro-provas.component';
+import { ListagemProvaComponent } from './components/listagem-prova/listagem-prova.component';
+import { RankingComponent } from './components/ranking/ranking.component';
 
 import {
   MaterialModule
@@ -19,12 +23,25 @@ import {
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    ProvaComponent,
+    CadastroProvaComponent,
+    ListagemProvaComponent,
+    MensagemComponent,
+    RankingComponent,
+    DialogOverviewExampleDialog
+  ],
+  entryComponents: [
+    DialogOverviewExampleDialog,
+    MensagemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
     MaterialModule
   ],
   exports: [
